@@ -53,6 +53,11 @@ public class Task1 {
 					+ "(UUID(),'Stephy','Graph','R',concat(firstName,MiddleName,lastname),'stephy111@gmail.com','ME','7894561234',Date_format(19941202,'%d.%m.%Y'),'Female','4/25 gandhi nagar','samayanallur(PO) samayanallur(Tk) Madurai (DT)','625201','Madurai','Tamilnadu','senior developer','python','30000',concat(salary*12/100000, if(salary*12>100000,'LPA','KPA'))),"
 					+ "(UUID(),'Karthick','Keyan','D',concat(firstName,MiddleName,lastname),'Karthick@gmail.com','MBA','8545789685',Date_format(19991005,'%d.%m.%Y'),'Male','4/20 kattapomman street','Taramani(PO) velachery(Tk) Chennai (DT)','600028','Chennai','Tamilnadu','junior developer','JAVA','30000',concat(salary*12/100000, if(salary*12>100000,'LPA','KPA')))";
 			stmt.executeUpdate(s4);
+			ResultSet empdetails=stmt.executeQuery(TableView);
+			while(empdetails.next())
+			{
+				System.out.println(empdetails.getString(1)+" "+empdetails.getString(2)+" "+empdetails.getString(3)+" "+empdetails.getString(4)+" "+empdetails.getString(5)+" "+empdetails.getString(6)+" "+empdetails.getString(7)+" "+empdetails.getString(8)+" "+empdetails.getString(9)+" "+empdetails.getString(10)+" "+empdetails.getString(11)+" "+empdetails.getString(12)+" "+empdetails.getString(13)+" "+empdetails.getString(14)+" "+empdetails.getString(15)+" "+empdetails.getString(16)+" "+empdetails.getString(17)+" "+empdetails.getString(18)+" "+empdetails.getString(19)+" "+empdetails.getString(20));
+			}
 			
 			con.close();
 			
