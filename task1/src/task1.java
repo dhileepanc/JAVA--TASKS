@@ -29,16 +29,20 @@ import com.mysql.cj.result.Row;
 
 public class task1 {
 
-	static final String JDBC_DRIVER="com.mysql.cj.jdbc.Driver"; 
-	static final String JDBC_URL = "jdbc:mysql://localhost:3306";  // Database URL
-	static final String User_Name ="root"; // Database username 
-	static final String Password ="1234";  // database password
+	
 	
 
 	public static void main(String[] args) throws SQLException, FileNotFoundException, IOException, EncryptedDocumentException, InvalidFormatException {
 		
 		 
 		 try {
+			 Properties prop=new Properties();
+				InputStream input=new FileInputStream("C:\\Users\\Dhileepan\\Desktop\\db.properties");
+				prop.load(input);
+				String Password=prop.getProperty("Password");
+				String User_Name=prop.getProperty("User_Name");
+				String JDBC_URL=prop.getProperty("JDBC_URL");
+				String JDBC_DRIVER=prop.getProperty("JDBC_DRIVER");
 			 Connection con;
 			 
 			Class.forName(JDBC_DRIVER);
